@@ -432,11 +432,10 @@
             transition: transform 5s cubic-bezier(0.17, 0.67, 0.12, 0.99);
 
             background: conic-gradient(
-                #d73f09 0deg 72deg,
-                #4A773C 72deg 144deg,
-                #003B5C 144deg 216deg,
-                #f7a162 216deg 288deg,
-                #D3832B 288deg 360deg
+                #d73f09 0deg 90deg,
+                #4A773C 90deg 180deg,
+                #003B5C 180deg 270deg,
+                #D3832B 270deg 360deg
             );
         }
 
@@ -447,7 +446,7 @@
             top: 50%;
             left: 50%;
             transform-origin: 0% 0%;
-            transform: rotate(calc(72deg * var(--i)));
+            transform: rotate(calc(90deg * var(--i)));
             font-size: 2rem;
             font-weight: 600;
             color: white;
@@ -461,7 +460,7 @@
             top: -100%;
             left: -100%;
             background: inherit;
-            transform: skewY(18deg) rotate(calc(-72deg * var(--i)));
+            transform: skewY(18deg) rotate(calc(-90deg * var(--i)));
         }
 
         .wheel-segment span {
@@ -907,11 +906,10 @@
                     <div class="spin-button" id="spinBtn2"><p>SPIN</p></div>
                     <div class="wheel" id="wheelElement2">    
 
-                            <span style="--i:0;"class="wheel-segment"><p style="rotate: 110deg; top: 20px; left: 118px; position: absolute;">Sticker</p></span>
-                            <span style="--i:1"class="wheel-segment"><p style="rotate: 110deg; position: absolute; left: 120px; top: -10px;">Magnet</p></span>
-                            <span style="--i:2"class="wheel-segment"><p style="rotate: 108deg; left: 135px; position: absolute; top: 5px;">Pen</p></span>
-                            <span style="--i:3"class="wheel-segment"><p style="rotate: 105deg; position: absolute; left: 140px;">Bike Light</p></span>
-                            <span style="--i:4"class="wheel-segment"><p style="position: absolute; rotate: 110deg; left: 130px; top: 10px;">Keychain</p></span>
+                            <span style="--i:0;"class="wheel-segment"><p style="rotate: 130deg; top: 70px; left: 70px; width: 140px; text-align:center; position: absolute;">Tape Measure</p></span>
+                            <span style="--i:1"class="wheel-segment"><p style="rotate: 130deg; position: absolute; left: 70px; top: 70px; width: 140px; text-align:center;">Pen</p></span>
+                            <span style="--i:2"class="wheel-segment"><p style="rotate: 130deg; left: 70px; width: 140px; text-align:center; position: absolute; top: 70px;">Bike Light</p></span>
+                            <span style="--i:3"class="wheel-segment"><p style="rotate: 130deg; position: absolute; left: 70px; top: 70px; width: 140px; text-align:center;">Carabiner</p></span>
 
                     </div>
                 </div>
@@ -1032,7 +1030,7 @@
             },
 
             {
-                label: "Do you want to receive more information from Oregon State University after the conference? E.g. receive a monthly newsletter or more information about academic programs",
+                label: "Do you want to receive more information from Oregon State University after the conference (e.g., receive a monthly newsletter or more information about academic programs)?",
                 options: ["Yes", "No"],
                 isEmailConditional: true
             },
@@ -1641,11 +1639,11 @@
 
             const angle = (360 - normalized + 32) % 360;
 
-            const segment = Math.floor(angle / 72);
-            const prizeIndex = segment % 5;
+            const segment = Math.floor(angle / 90);
+            const prizeIndex = segment % 4;
              // 0–4
 
-                const prizes = ["Sticker", "Magnet", "Pen", "Bike Light", "Keychain"];
+                const prizes = ["Tape Measure", "Pen", "Bike Light", "Carabiner"];
                 showPrizeModal(prizes[prizeIndex]);
 
 
