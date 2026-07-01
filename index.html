@@ -1635,12 +1635,13 @@
 
             setTimeout(() => {
 
-            const normalized = (rotation2 + 106) % 360;
+            const normalized = ((rotation2 % 360) + 360) % 360;
 
             const angle = (360 - normalized + 32) % 360;
 
-            const segment = Math.floor(angle / 90);
-            const prizeIndex = segment % 4;
+            const segment = Math.floor(normalized / 90);
+            const prizeMap = [2, 1, 0, 3];
+            const prizeIndex = prizeMap[segment];
              // 0–4
 
                 const prizes = ["Tape Measure", "Pen", "Bike Light", "Carabiner"];
